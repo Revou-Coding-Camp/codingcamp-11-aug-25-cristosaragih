@@ -6,78 +6,90 @@ body {
   box-sizing: border-box;
   background-color: #f4f4f4;
 }
+
 /* Home Page Styles */
 #home {
-  margin: 10%;
+  margin: 0 auto;  /* Ensure margin auto to center */
+  width: 100%;  /* Fill the screen width */
+  max-width: 100%;  /* Ensure it doesn't exceed the screen width */
 }
+
+/* Adjust text and content alignment */
 .text-lg {
-  height: 100vh; /* Ensure it takes full viewport height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #0051bc; /* Tailwind gray-200 */
   text-align: center;
-  margin: 40px; /* Add margin around the content */
-
+  margin: 0 20px;  /* Add margin to text */
 }
 
+/* Ensure each section is responsive */
+section {
+  padding: 20px;
+  width: 100%;  /* Ensure sections take full width */
+}
+
+/* Header */
 header {
-  position: sticky; /* Make the header sticky */
-  top: 0; /* Keep it at the top */
-  z-index: 50; /* Ensure it stays above other content */
-  display: flex;
-  justify-content: center; /* Center the navbar items */
-  padding: 10px 20px; /* Reduced padding for smaller navbar */
-  background-color: white;
-  border-bottom: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(255, 16, 16, 0.1);
-}
-
-header nav {
-  max-width: 1200px; /* Set max-width to prevent it from stretching too wide */
-  width: 100%; /* Ensure navbar takes full width but with max-width constraint */
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.nav-links {
+/* Navbar */
+header nav {
   display: flex;
-  gap: 15px; /* Reduced space between links */
+  gap: 15px;
 }
 
 .nav-links a {
-  display: block;
-  padding: 8px 15px; /* Reduced padding to make items smaller */
+  padding: 8px 15px;
   background-color: #f0f0f0;
   text-decoration: none;
   color: black;
-  border-radius: 6px; /* Slightly smaller border radius */
-  font-size: 14px; /* Smaller font size for the links */
+  border-radius: 6px;
+  font-size: 14px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover {
-  background-color: #ff9800; /* Change color on hover */
+  background-color: #ff9800;
   color: white;
 }
 
-/* Responsive for Small Screens (Mobile First) */
+/* Mobile Navbar Menu */
+#mobileMenu {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+}
+
+#mobileMenu a {
+  padding: 10px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+#mobileMenu a:hover {
+  background-color: #ff9800;
+  color: white;
+}
+
+/* Mobile Menu Toggle */
 @media (max-width: 768px) {
-  section {
-    padding: 20px;
+  #mobileMenu {
+    display: none;
   }
 
   .flex {
-    flex-direction: column; /* Stack the columns on mobile */
+    flex-direction: column;
   }
 
-  .w-half {
-    width: 100%; /* Make columns take full width on smaller screens */
-    margin-bottom: 20px; /* Add margin between columns */
-  }
-
-  .space-x-8 {
-    flex-direction: column; /* Remove space between items and stack vertically */
+  .md:hidden {
+    display: flex;
   }
 }

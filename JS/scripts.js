@@ -14,7 +14,13 @@ document.querySelectorAll('.nav-links a').forEach(navLink => {
   });
 });
 
- //!--Check if name is already saved in localStorage, if yes, show the home page directly
+// Toggle the mobile menu visibility
+document.getElementById("menuToggle").addEventListener("click", () => {
+  const mobileMenu = document.getElementById("mobileMenu");
+  mobileMenu.classList.toggle("hidden");
+});
+
+// Check if name is already saved in localStorage, if yes, show the home page directly
 window.onload = function() {
   const userName = localStorage.getItem("userName");
 
