@@ -6,6 +6,21 @@ body {
   box-sizing: border-box;
   background-color: #f4f4f4;
 }
+/* Home Page Styles */
+#home {
+  margin: 10%;
+}
+.text-lg {
+  height: 100vh; /* Ensure it takes full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0051bc; /* Tailwind gray-200 */
+  text-align: center;
+  margin: 40px; /* Add margin around the content */
+
+}
 
 header {
   position: sticky; /* Make the header sticky */
@@ -16,7 +31,7 @@ header {
   padding: 10px 20px; /* Reduced padding for smaller navbar */
   background-color: white;
   border-bottom: 1px solid #ccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(255, 16, 16, 0.1);
 }
 
 header nav {

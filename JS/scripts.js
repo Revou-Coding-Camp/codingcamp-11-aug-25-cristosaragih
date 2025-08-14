@@ -14,9 +14,10 @@ document.querySelectorAll('.nav-links a').forEach(navLink => {
   });
 });
 
-// Check if name is already saved in localStorage, if yes, show the home page directly
+ //!--Check if name is already saved in localStorage, if yes, show the home page directly
 window.onload = function() {
   const userName = localStorage.getItem("userName");
+
   if (userName) {
     document.getElementById("greetingMessage").textContent = `Hi ${userName}, Welcome To Website`;
     document.getElementById("namePage").style.display = "none"; // Hide name input page
@@ -47,7 +48,7 @@ document.getElementById("messageForm").addEventListener("submit", function(event
   
   // Update greeting message
   document.getElementById("greetingMessage").textContent = `Hi ${name}, Welcome To Website`;
-  
+
   // Display input data on the right side
   document.getElementById("respName").textContent = name;
   document.getElementById("respDob").textContent = dob;

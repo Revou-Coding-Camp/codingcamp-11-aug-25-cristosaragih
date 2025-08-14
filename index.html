@@ -6,7 +6,7 @@
   <title>My Website</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-sans bg-gray-100">
 
@@ -18,113 +18,96 @@
       <img src="Cristo(1).png" alt="Logo" class="h-8 w-auto"> <!-- Sesuaikan ukuran logo sesuai kebutuhan -->
     </div>
       
-      <!-- Navbar -->
-      <nav class="hidden md:flex space-x-6">
-        <a href="#home" class="text-lg text-gray-700 hover:text-yellow-500">Home</a>
-        <a href="#profile" class="text-lg text-gray-700 hover:text-yellow-500">Our Profile</a>
-        <a href="#portfolio" class="text-lg text-gray-700 hover:text-yellow-500">Portfolio</a>
-        <a href="#message" class="text-lg text-gray-700 hover:text-yellow-500">Message Us</a>
-      </nav>
+    <!-- Navbar -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="text-lg text-gray-700 hover:text-yellow-500">Home</a>
+      <a href="#profile" class="text-lg text-gray-700 hover:text-yellow-500">Our Profile</a>
+      <a href="#portfolio" class="text-lg text-gray-700 hover:text-yellow-500">Portfolio</a>
+      <a href="#message" class="text-lg text-gray-700 hover:text-yellow-500">Message Us</a>
+    </nav>
       
-      <!-- Mobile Hamburger Menu -->
-      <div class="md:hidden flex items-center">
-        <button id="menuToggle" class="text-gray-700">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+    <!-- Mobile Hamburger Menu -->
+    <div class="md:hidden flex items-center">
+      <button id="menuToggle" class="text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+
+</header>
+
+<!-- Main Content -->
+<main class="space-y-40 py-16 mx-6 my-8">
+
+  <!-- Home Section -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center bg-gray-200 text-center mx-6 my-8">
+    <h1 id="greetingMessage" class="text-4xl font-bold mb-4">Hi, Welcome To Website</h1>
+    <p class="text-lg text-center mr-8 ml-6">Selamat datang di situs web kami! Kami sangat senang Anda mengunjungi kami. Di sini, Anda akan menemukan berbagai informasi, portofolio, dan layanan yang kami tawarkan. Kami berkomitmen untuk memberikan pengalaman terbaik dan menyediakan solusi yang tepat untuk kebutuhan Anda. Jika Anda memiliki pertanyaan atau ingin berbicara lebih lanjut, jangan ragu untuk menghubungi kami. Terima kasih telah memilih untuk menjelajahi dunia kami!</p>
+
+  </section>
+  
+  <!-- Our Profile Section -->
+  <section id="profile" class="h-screen flex flex-col justify-center items-center bg-white text-center mx-6 my-8">
+    <h2 class="text-3xl font-bold mb-4">Our Profile</h2>
+    <p class="text-xl">This is our profile section.</p>
+  </section>
+  
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="h-screen flex flex-col justify-center items-center bg-gray-200 text-center mx-6 my-8">
+    <h2 class="text-3xl font-bold mb-4">Portfolio</h2>
+    <p class="text-xl">This is the portfolio section.</p>
+  </section>
+
+  <!-- Message Us Section -->
+  <section id="message" class="h-screen flex justify-center items-center bg-white text-center mx-6 my-8">
+    <div class="flex w-full max-w-6xl space-x-8">
+      <!-- Form Kolom Kiri -->
+      <div class="w-1/2 p-6">
+        <h2 class="text-3xl font-bold mb-4">Message Us</h2>
+        <form id="messageForm" class="space-y-4">
+          <label for="name" class="block text-left">Nama</label>
+          <input type="text" id="name" class="p-3 border border-gray-300 rounded-lg w-full" placeholder="Nama" required>
+
+          <label for="dob" class="block text-left">Tanggal Lahir</label>
+          <input type="date" id="dob" class="p-3 border border-gray-300 rounded-lg w-full" required>
+
+          <label for="gender" class="block text-left">Jenis Kelamin</label>
+          <select id="gender" class="p-3 border border-gray-300 rounded-lg w-full" required>
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+          </select>
+
+          <label for="message" class="block text-left">Pesan</label>
+          <textarea id="message" class="p-3 border border-gray-300 rounded-lg w-full" placeholder="Pesan" required></textarea>
+
+          <button type="submit" class="bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-400">Submit</button>
+        </form>
+      </div>
+
+      <!-- Current Input Kolom Kanan -->
+      <div class="w-1/2 p-6 border border-gray-300 rounded-lg">
+        <h3 class="text-xl font-semibold mb-4 text-left">Current Input:</h3>
+        <div id="responseContent" class="text-left">
+          <p>Nama: <span id="respName">-</span></p>
+          <p>Tanggal lahir: <span id="respDob">-</span></p>
+          <p>Jenis Kelamin: <span id="respGender">-</span></p>
+          <p>Pesan: <span id="respMessage">-</span></p>
+        </div>
       </div>
     </div>
-      <!-- Name Input Page -->
-  <div id="namePage" class="flex flex-col items-center justify-center h-screen bg-white">
-    <h2 class="text-3xl mb-4">Please Enter Your Name</h2>
-    <input type="text" id="userName" class="p-3 border border-gray-300 rounded-lg mb-4" placeholder="Enter your name" required>
-    <button onclick="saveName()" class="bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-400">Submit</button>
-  </div>
+  </section>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden bg-white shadow-md">
-      <div class="flex flex-col space-y-4 px-4 py-4">
-        <a href="#home" class="text-lg text-gray-700 hover:text-yellow-500">Home</a>
-        <a href="#profile" class="text-lg text-gray-700 hover:text-yellow-500">Our Profile</a>
-        <a href="#portfolio" class="text-lg text-gray-700 hover:text-yellow-500">Portfolio</a>
-        <a href="#message" class="text-lg text-gray-700 hover:text-yellow-500">Message Us</a>
-      </div>
-    </div>
-  </header>
+</main>
 
-  <!-- Main Content -->
-  <main class="space-y-40 py-16">
+<!-- Footer -->
+<footer class="bg-white py-8 text-center text-gray-700 shadow-inner">
+  <p>Created by Cristo Saragih</p>
+</footer>
 
-    <!-- Home Section -->
-    <section id="home" class="h-screen flex flex-col justify-center items-center bg-gray-200 text-center">
-      <h1 id="greetingMessage" class="text-4xl font-bold mb-4">Hi, Welcome To Website</h1>
-      <p class="text-lg">Selamat datang di situs web kami! Kami sangat senang Anda mengunjungi kami. Di sini, Anda akan menemukan berbagai informasi, portofolio, dan layanan yang kami tawarkan. Kami berkomitmen untuk memberikan pengalaman terbaik dan menyediakan solusi yang tepat untuk kebutuhan Anda. Jika Anda memiliki pertanyaan atau ingin berbicara lebih lanjut, jangan ragu untuk menghubungi kami. Terima kasih telah memilih untuk menjelajahi dunia kami!</p>
-
-    </section>
-    
-    <!-- Our Profile Section -->
-    <section id="profile" class="h-screen flex flex-col justify-center items-center bg-white text-center">
-      <h2 class="text-3xl font-bold mb-4">Our Profile</h2>
-      <p class="text-xl">This is our profile section.</p>
-    </section>
-    
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="h-screen flex flex-col justify-center items-center bg-gray-200 text-center">
-      <h2 class="text-3xl font-bold mb-4">Portfolio</h2>
-      <p class="text-xl">This is the portfolio section.</p>
-    </section>
-
-    <!-- Message Us Section -->
-<!-- Message Us Section -->
-<section id="message" class="h-screen flex justify-center items-center bg-white text-center">
-  <div class="flex w-full max-w-6xl space-x-8">
-    
-    <!-- Form Kolom Kiri -->
-    <div class="w-1/2 p-6">
-      <h2 class="text-3xl font-bold mb-4">Message Us</h2>
-      <form id="messageForm" class="space-y-4">
-        <label for="name" class="block text-left">Nama</label>
-        <input type="text" id="name" class="p-3 border border-gray-300 rounded-lg w-full" placeholder="Nama" required>
-
-        <label for="dob" class="block text-left">Tanggal Lahir</label>
-        <input type="date" id="dob" class="p-3 border border-gray-300 rounded-lg w-full" required>
-
-        <label for="gender" class="block text-left">Jenis Kelamin</label>
-        <select id="gender" class="p-3 border border-gray-300 rounded-lg w-full" required>
-          <option value="Laki-Laki">Laki-Laki</option>
-          <option value="Perempuan">Perempuan</option>
-        </select>
-
-        <label for="message" class="block text-left">Pesan</label>
-        <textarea id="message" class="p-3 border border-gray-300 rounded-lg w-full" placeholder="Pesan" required></textarea>
-
-        <button type="submit" class="bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-400">Submit</button>
-      </form>
-    </div>
-
-<!-- Current Input Kolom Kanan -->
-<div class="w-1/2 p-6 border border-gray-300 rounded-lg">
-  <h3 class="text-xl font-semibold mb-4 text-left">Current Input:</h3>
-  <div id="responseContent" class="text-left">
-    <p>Nama: <span id="respName">-</span></p>
-    <p>Tanggal lahir: <span id="respDob">-</span></p>
-    <p>Jenis Kelamin: <span id="respGender">-</span></p>
-    <p>Pesan: <span id="respMessage">-</span></p>
-  </div>
-</div>
-
-  </div>
-</section>
-
-
-  <!-- Footer -->
-  <footer class="bg-white py-8 text-center text-gray-700 shadow-inner">
-    <p>Created by Cristo Saragih</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="/JS/scripts.js"></script>
-
+<!-- Scripts -->
+<script src="scripts.js"></script>
 </body>
 </html>
