@@ -1,0 +1,68 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+header {
+  position: sticky; /* Make the header sticky */
+  top: 0; /* Keep it at the top */
+  z-index: 50; /* Ensure it stays above other content */
+  display: flex;
+  justify-content: center; /* Center the navbar items */
+  padding: 10px 20px; /* Reduced padding for smaller navbar */
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+  max-width: 1200px; /* Set max-width to prevent it from stretching too wide */
+  width: 100%; /* Ensure navbar takes full width but with max-width constraint */
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px; /* Reduced space between links */
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 15px; /* Reduced padding to make items smaller */
+  background-color: #f0f0f0;
+  text-decoration: none;
+  color: black;
+  border-radius: 6px; /* Slightly smaller border radius */
+  font-size: 14px; /* Smaller font size for the links */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #ff9800; /* Change color on hover */
+  color: white;
+}
+
+/* Responsive for Small Screens (Mobile First) */
+@media (max-width: 768px) {
+  section {
+    padding: 20px;
+  }
+
+  .flex {
+    flex-direction: column; /* Stack the columns on mobile */
+  }
+
+  .w-half {
+    width: 100%; /* Make columns take full width on smaller screens */
+    margin-bottom: 20px; /* Add margin between columns */
+  }
+
+  .space-x-8 {
+    flex-direction: column; /* Remove space between items and stack vertically */
+  }
+}
